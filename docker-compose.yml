@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  debug:
+    container_name: StyleGan2-ada-pytorch
+    hostname: StyleGan2-ada-pytorch
+    build:
+      context: ${PWD}
+      dockerfile: Dockerfile
+    tty: true
+    stdin_open: true
+    shm_size: 4gb
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            capabilities: [gpu]
+            count: all
+    # environment:
+    #   - CUDA_VISIBLE_DEVICES=0,1,2
+    volumes:
+      - ${PWD}:/workspace
+    command: bash

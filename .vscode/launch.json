@@ -22,11 +22,11 @@
             "justMyCode": true,
             "args": [
                 "--outdir",
-                "outputs/benign_nomask",
+                "outputs/benign_nomark",
                 "--data",
-                "data/dataset_gan_resize_256/benign_nomask.zip",
+                "data/dataset_gan_resize_256/benign_nomark.zip",
                 "--gpus",
-                "4",
+                "8",
                 "--kimg",
                 "25000",
                 "--metrics",
@@ -44,7 +44,7 @@
                 // "--dry-run"
             ],
             "env": {
-                "CUDA_VISIBLE_DEVICES": "0,1,2,3"
+                "CUDA_VISIBLE_DEVICES": "0,1,2,3,4,5,6,7"
             }
         }
     ]

@@ -5,6 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "name": "Python: 현재 파일",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "justMyCode": true
+        },
+        {
             "name": "Python: train.py",
             "type": "python",
             "request": "launch",
@@ -14,13 +22,13 @@
             "justMyCode": true,
             "args": [
                 "--outdir",
-                "outputs/benign_norotate",
+                "outputs/benign_nomask",
                 "--data",
-                "data/dataset_gan_resize_256/benign.zip",
+                "data/dataset_gan_resize_256/benign_nomask.zip",
                 "--gpus",
-                "2",
+                "4",
                 "--kimg",
-                "1000",
+                "25000",
                 "--metrics",
                 "fid50k_full",
                 "--cfg",
@@ -36,7 +44,7 @@
                 // "--dry-run"
             ],
             "env": {
-                "CUDA_VISIBLE_DEVICES": "0,1"
+                "CUDA_VISIBLE_DEVICES": "0,1,2,3"
             }
         }
     ]
